@@ -1,6 +1,7 @@
 
 const descricao = document.getElementById('descricao');
-const quantidade = document.getElementById('quantidade');
+const qtdTarefas = document.getElementById('qtdTarefas');
+const qtd = document.getElementById('concluidas')
 const lista = [];
 const btnAdd = document.getElementById('btnAdd');
 
@@ -32,14 +33,16 @@ const listarTarefas = () => {
 }
 
 const total = () => {
-    lista.length > 1 ? quantidade.innerText = `Você tem ${lista.length} tarefas` : quantidade.innerText = `Você tem ${lista.length} tarefa`;
+    lista.length > 1 ? qtdTarefas.innerText = `Você tem ${lista.length} tarefas` : 
+                    qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;
 }
 
 const concluida = (li) => {
     li.classList.toggle('concluida');
 
-    const qtdDoncluidas = document.querySelectorAll('.concluida').length;
+    const concluidas = document.querySelectorAll('.concluida').length;
+    const qtdConcluidas = document.getElementById('qtdConcluidas');
 
-    qtdDoncluidas > 1 ? document.getElementById('concluidas').innerText = ` e ${qtdDoncluidas} concluídas` : document.getElementById('concluidas').innerText = ` e ${qtdDoncluidas} concluída`;
-
+    concluidas > 1 ? qtdConcluidas.innerText = ` e ${concluidas} concluídas` : 
+                    qtdConcluidas.innerText = ` e ${concluidas} concluída`;
 }
