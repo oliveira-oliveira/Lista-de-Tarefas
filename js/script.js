@@ -1,6 +1,7 @@
 
 const descricao = document.getElementById('descricao');
 const qtdTarefas = document.getElementById('qtdTarefas');
+const qtdConcluidas = document.getElementById('qtdConcluidas');
 const qtd = document.getElementById('concluidas')
 const lista = [];
 const btnAdd = document.getElementById('btnAdd');
@@ -36,16 +37,32 @@ const listarTarefas = () => {
 }
 
 const total = () => {
-    lista.length > 1 ? qtdTarefas.innerText = `Você tem ${lista.length} tarefas` : 
-                    qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;
+
+    if (lista.length < 1) {
+        qtdTarefas.innerText = '';
+    } else if(lista.length > 1) {
+        qtdTarefas.innerText = `Você tem ${lista.length} tarefas`;
+    } else {
+        qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;
+    }
+
+    /*lista.length > 1 ? qtdTarefas.innerText = `Você tem ${lista.length} tarefas` : 
+                    qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;*/
 }
 
 const concluida = (li) => {
     li.classList.toggle('concluida');
 
     const concluidas = document.querySelectorAll('.concluida').length;
-    const qtdConcluidas = document.getElementById('qtdConcluidas');
+    
+    if (concluidas < 1) {
+        qtdConcluidas.innerText = '';
+    } else if (concluidas > 1) {
+        qtdConcluidas.innerText = ` e ${concluidas} concluídas`
+    } else {
+        qtdConcluidas.innerText = ` e ${concluidas} concluída`
+    }
 
-    concluidas > 1 ? qtdConcluidas.innerText = ` e ${concluidas} concluídas` : 
-                    qtdConcluidas.innerText = ` e ${concluidas} concluída`;
+    /*concluidas > 1 ? qtdConcluidas.innerText = ` e ${concluidas} concluídas` : 
+                    qtdConcluidas.innerText = ` e ${concluidas} concluída`;*/
 }
