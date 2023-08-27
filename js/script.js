@@ -10,8 +10,8 @@ btnAdd.addEventListener('click', function(e){
     e.preventDefault();
 
     listarTarefas();
+    quantidadeTarefas();
     limparInput();
-    total();
 })
 
 const limparInput = () => descricao.value = '';
@@ -36,7 +36,7 @@ const listarTarefas = () => {
     }
 }
 
-const total = () => {
+const quantidadeTarefas = () => {
 
     if (lista.length < 1) {
         qtdTarefas.innerText = '';
@@ -46,11 +46,10 @@ const total = () => {
         qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;
     }
 
-    /*lista.length > 1 ? qtdTarefas.innerText = `Você tem ${lista.length} tarefas` : 
-                    qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;*/
 }
 
 const concluida = (li) => {
+
     li.classList.toggle('concluida');
 
     const concluidas = document.querySelectorAll('.concluida').length;
@@ -63,6 +62,4 @@ const concluida = (li) => {
         qtdConcluidas.innerText = ` e ${concluidas} concluída`
     }
 
-    /*concluidas > 1 ? qtdConcluidas.innerText = ` e ${concluidas} concluídas` : 
-                    qtdConcluidas.innerText = ` e ${concluidas} concluída`;*/
 }
