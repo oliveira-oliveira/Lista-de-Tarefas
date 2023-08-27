@@ -1,12 +1,14 @@
-Lista de Tarefas
+<h2>Lista de Tarefas</h2>
 
-O propósito desse projeto é colocar desenvolver através do estudo de HTML, CSS e JavaScript, uma lista de tarefas com as seguintes ações:
+O propósito desse projeto é colocar desenvolver através do estudo de <strong>HTML, CSS e JavaScript</strong>, uma lista de tarefas com as seguintes ações:
 
-    Criar
-    Concluir
-    Editar
-    Excluir
+<ul>
+  <li>Criar</li>
+  <li>Concluir</li>
+  <li>Editar</li>
+  <li>Excluir</li>
+</ul>
 
-Tudo isso utilizando o Local Storage como Banco de Dados.
+Tudo isso utilizando o <strong>Local Storage</strong> como <strong>Banco de Dados</strong>.
 
-Desenvolvidor por: Diego Oliveira.
+Desenvolvidor por: <strong>Diego Oliveira</strong>.
