@@ -1,0 +1,9 @@
+
+.concluida {
+    font-style: italic;
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2rem;
+    list-style-type: "\1F525";
+    padding-left: 15px;
+}
+
