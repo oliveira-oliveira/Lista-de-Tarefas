@@ -17,6 +17,9 @@ const limparInput = () => descricao.value = '';
 
 const listarTarefas = () => {
 
+    if (descricao.value.length < 4)
+        return console.log('campo em branco')
+    
     let li = document.createElement('li');
     li.setAttribute('class', 'tarefa');
     li.innerText = descricao.value;

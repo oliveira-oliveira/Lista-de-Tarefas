@@ -1,9 +1,16 @@
 
+.tarefa {
+    font-size: 1.4rem;
+    font-weight: bold;
+    list-style-type: '\26A0';
+    padding-left: 15px;
+}
+
 .concluida {
     font-style: italic;
     text-decoration: line-through;
     text-decoration-thickness: 0.2rem;
-    list-style-type: "\1F525";
+    list-style-type: "\2714";
     padding-left: 15px;
 }
 
