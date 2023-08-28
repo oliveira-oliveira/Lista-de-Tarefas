@@ -80,3 +80,24 @@ const excluir = li => {
         quantidadeTarefasConcluidas();
     }
 }
+
+const editar = li => {
+
+    const registro = li.parentElement.parentElement.querySelector('.registro');
+    const index = lista.indexOf(registro.textContent);
+    
+    const novoRegistro = prompt('Editar a tarefa: ', registro.textContent);
+
+    if (novoRegistro.length >= 3) {
+        
+        if (confirm(`Confirma a alteração\nDe: ${registro.textContent}\nPara: ${novoRegistro} ?`)) {
+    
+            registro.textContent = novoRegistro;
+    
+            lista.splice(index, 1, novoRegistro)
+        }
+    } else {
+        alert('Alteração inválida');
+        console.error('Alteração inválida')
+    }
+}
