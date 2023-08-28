@@ -2,15 +2,26 @@
 .tarefa {
     font-size: 1.4rem;
     font-weight: bold;
-    list-style-type: '\26A0';
-    padding-left: 15px;
+    list-style-type: none;
+    padding: 7px 7px 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    max-width: 400px;
+    border-radius: 5px;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.tarefa:hover {
+    background-color: rgba(137, 43, 226, 0.842);
+    
 }
 
 .concluida {
     font-style: italic;
     text-decoration: line-through;
-    text-decoration-thickness: 0.2rem;
-    list-style-type: "\2714";
-    padding-left: 15px;
+    text-decoration-thickness: 0.25rem;
+    text-decoration-color: black;
 }
 
