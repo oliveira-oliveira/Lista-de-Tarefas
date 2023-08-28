@@ -39,26 +39,13 @@ const listarTarefas = () => {
 
 const quantidadeTarefas = () => {
 
-    if (lista.length < 1) {
-        qtdTarefas.innerText = '';
-    } else if(lista.length > 1) {
-        qtdTarefas.innerText = `Você tem ${lista.length} tarefas`;
-    } else {
-        qtdTarefas.innerText = `Você tem ${lista.length} tarefa`;
-    }
+    qtdTarefas.innerText = lista.length;
 }
 
 const quantidadeTarefasConcluidas = () => {
 
     const concluidas = document.querySelectorAll('.concluida').length;
-    
-    if (concluidas < 1) {
-        qtdConcluidas.innerText = '';
-    } else if (concluidas > 1) {
-        qtdConcluidas.innerText = ` e ${concluidas} concluídas`
-    } else {
-        qtdConcluidas.innerText = ` e ${concluidas} concluída`
-    }
+    qtdConcluidas.innerText = concluidas;
 }
 
 const concluir = (li) => {
@@ -85,7 +72,7 @@ const editar = li => {
 
     const registro = li.parentElement.parentElement.querySelector('.registro');
     const index = lista.indexOf(registro.textContent);
-    
+
     const novoRegistro = prompt('Editar a tarefa: ', registro.textContent);
 
     if (novoRegistro.length >= 3) {
