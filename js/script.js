@@ -6,6 +6,7 @@ const tarefas = document.getElementById('tarefas');
 const qtd = document.getElementById('concluidas')
 const lista = [];
 const btnAdd = document.getElementById('btnAdd');
+const btnExcluirTudo = document.getElementById('btn-limparLista');
 
 btnAdd.addEventListener('click', function(e){
     e.preventDefault();
@@ -26,9 +27,9 @@ const listarTarefas = () => {
     li.setAttribute('class', 'tarefa');
     li.innerHTML = `<span class='registro'>${descricao.value}</span>
                 <div>
-                    <button onclick="concluir(this)" title='concluir a tarefa'> &#10004; </button>
-                    <button onclick="editar(this)" title='editar a tarefa'> &#128221; </button>
-                    <button onclick="excluir(this)" title='excluir a tarefa'> &#10060; </button>
+                    <button class='btn-action' onclick="concluir(this)" title='concluir a tarefa'> &#10004; </button>
+                    <button class='btn-action' onclick="editar(this)" title='editar a tarefa'> &#128221; </button>
+                    <button class='btn-action' onclick="excluir(this)" title='excluir a tarefa'> &#10060; </button>
                 </diV>`;
 
     tarefas.appendChild(li);
@@ -36,6 +37,17 @@ const listarTarefas = () => {
     lista.push(descricao.value);
     
 }
+
+btnExcluirTudo.addEventListener('click', function(e){
+    e.preventDefault();
+    
+    if (confirm('Tem certeza que deseja limpar a lista?')) {
+        lista.splice(0, lista.length);
+        quantidadeTarefas();
+        quantidadeTarefasConcluidas();
+        tarefas.innerHTML = "";
+    }
+})
 
 const quantidadeTarefas = () => {
 
